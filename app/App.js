@@ -1,22 +1,9 @@
-var React = require('react'); 
-var RouteHandler = require('react-router').RouteHandler; 
-var SearchGithub = requre('./SearchGithub');
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Router = require('react-router').Router;
+var routes = require('./config/routes');
 
-var App = React.createClass({
-  render: function() { 
-    return ( 
-      <div className="main-container"> 
-        <nav className="navbar navbar-default" role="navigation"> 
-          <div className="col-sm-7" "col-sm-offset-2" style="{{marginTop: 15"}}>
-            <SearchGithub /> 
-          </div> 
-        </nav> 
-        <div className="container"> 
-          <RouteHandler />
-        </div>
-      </div>
-    ); 
-  }
-});
-
-module.exports = App; 
+ReactDOM.render(
+  <Router>{routes}</Router>,
+  document.getElementById('app')
+)
